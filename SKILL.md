@@ -18,7 +18,7 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 3. Build each ad around this structure: 0-3s hook, product proof, buyer pain point, benefit, trust signal, inquiry CTA.
 4. Localize the script. The language is a parameter, not a fixed rule. Use the target market's language for hook, captions, voiceover, and CTA.
 5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates.
-6. Add voiceover and BGM. Keep BGM audible but below narration; duck music if narration is present.
+6. Add voiceover and real downloaded BGM. Use existing online/free music tracks by default; do not synthesize fake music unless the user explicitly asks for synthetic audio. Keep BGM audible but below narration; duck music if narration is present.
 7. Render vertical-first deliverables unless the user asks otherwise. For Facebook/Reels/TikTok default to 1080x1920, 20-35 seconds, h.264 mp4, AAC audio.
 8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review.
 
@@ -27,7 +27,7 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 - Use `video-processor` / ffmpeg for the batch render, transcoding, trimming, subtitles, BGM mix, and QC.
 - Use `jianying-editor` when the user specifically wants JianYing/CutCap-style projects, templates, timeline editing, or a workflow based on an existing JianYing batch script.
 - Use `speech` or the local TTS path already configured in the project for multilingual voiceover.
-- Use `media-use` for local/free BGM and SFX resolution when the project does not already include usable music.
+- Use `media-use` or browser/download tools for local/free BGM and SFX resolution when the project does not already include usable music. Prefer downloaded tracks from free/royalty-free libraries over generated tones.
 - Use `hyperframes` or `general-video` only for extra motion packaging: title cards, dynamic benefit cards, animated CTA, and visual hooks. Then composite those assets into the final ffmpeg/JianYing batch.
 
 ## Multilingual Defaults
@@ -80,6 +80,7 @@ For every batch, create a manifest or script-level list that records each ad's h
 ## Resources
 
 - Read `references/ad-video-workflow.md` when planning or revising the creative structure for a campaign.
+- Read `references/music-sourcing.md` before adding BGM or SFX to a deliverable.
 - Read `references/multilingual-copy.md` when generating localized hooks, captions, narration, or CTAs.
 - Run `scripts/qc_video_batch.py` after rendering a batch to verify deliverables and extract sample frames.
 

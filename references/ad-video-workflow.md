@@ -50,6 +50,8 @@ Before delivery:
 - Count final mp4 files.
 - Verify 1080x1920 or requested aspect ratio.
 - Verify audio stream exists.
+- Confirm the BGM is an actual downloaded music track, not synthetic placeholder audio.
+- Listen-check at least one opening, one middle narration section, and one CTA ending to verify BGM is clearly audible and does not cover the voiceover.
 - Confirm duration range.
 - Extract opening and ending frames from at least three videos.
 - Inspect text fit, language, product clarity, CTA, and absence of unwanted burned-in subtitles.
