@@ -1,0 +1,4 @@
+interface:
+  display_name: "FangSkill"
+  short_description: "Create multilingual industrial ad video batches from local factory footage."
+  default_prompt: "Use FangSkill to create a vertical industrial ad video batch with buyer-focused hooks, localized captions, voiceover, BGM, varied footage, and export QC."
