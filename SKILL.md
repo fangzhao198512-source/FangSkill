@@ -17,7 +17,7 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 2. Inspect local素材 before editing. Prefer real product, factory, assembly, testing, packaging, delivery, and aerial clips. Exclude source videos with burned-in subtitles or irrelevant consumer-style footage.
 3. Build each ad around this structure: 0-3s hook, product proof, buyer pain point, benefit, trust signal, inquiry CTA.
 4. Localize the script. The language is a parameter, not a fixed rule. Use the target market's language for hook, captions, voiceover, and CTA.
-5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates.
+5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates. Before selecting source segments, check the asset usage ledger and avoid reusing the same source time ranges.
 6. Add voiceover and real downloaded BGM. Use existing online/free music tracks by default; do not synthesize fake music unless the user explicitly asks for synthetic audio. For batches, use a different commercial/corporate-style music track for each video unless the user explicitly approves reuse. Keep BGM audible but below narration; duck music if narration is present.
 7. Render vertical-first deliverables unless the user asks otherwise. For Facebook/Reels/TikTok default to 1080x1920, 20-35 seconds, h.264 mp4, AAC audio.
 8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review.
@@ -68,12 +68,13 @@ When the product changes, rewrite hooks, captions, narration, and CTA around tha
 
 ## Batch Variation Rules
 
-For every batch, create a manifest or script-level list that records each ad's hook, main message, CTA, and source clips. Across a 10-video batch:
+For every batch, create a manifest or script-level list that records each ad's hook, main message, CTA, source clips, and exact source time ranges. Across a 10-video batch:
 
 - Use different hook text in every video.
 - Use different first shot categories where possible.
 - Rotate product detail, factory proof, testing, packaging, and aerial footage.
 - Change crop/zoom direction, segment duration, transition timing, subtitle wording, and CTA line.
+- Track source usage as `source file + start second + end second`. Do not reuse an already-recorded source range in later batches unless the user explicitly approves reuse.
 - Use non-repeating BGM across the batch; do not rotate only a few tracks through many videos.
 - Avoid using the same visible Chinese burned-in subtitle source.
 - Do not promise platform-detection evasion. Focus on genuinely distinct creative, claims, and footage.
@@ -81,8 +82,10 @@ For every batch, create a manifest or script-level list that records each ad's h
 ## Resources
 
 - Read `references/ad-video-workflow.md` when planning or revising the creative structure for a campaign.
+- Read `references/asset-usage-ledger.md` before selecting source clips for a batch or when the user complains that footage repeats.
 - Read `references/music-sourcing.md` before adding BGM or SFX to a deliverable.
 - Read `references/multilingual-copy.md` when generating localized hooks, captions, narration, or CTAs.
+- Run `scripts/asset_usage_ledger.py` to check or append source time ranges used by a batch.
 - Run `scripts/qc_video_batch.py` after rendering a batch to verify deliverables and extract sample frames.
 
 ## Delivery
