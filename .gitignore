@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# Local rendered media, ledgers, and campaign outputs should not be committed.
+_work/
+_qc_frames/
+_asset_usage_ledger.csv
+_asset_usage_plan.csv
+_music_ledger.csv
+*.mp4
+*.mov
+*.MOV
+*.mp3
+*.wav
+*.aac
