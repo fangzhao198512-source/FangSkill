@@ -20,7 +20,7 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates. Before selecting source segments, check the asset usage ledger and avoid reusing the same source time ranges.
 6. Add voiceover and real downloaded BGM. Use existing online/free music tracks by default; do not synthesize fake music unless the user explicitly asks for synthetic audio. For batches, use a different commercial/corporate-style music track for each video unless the user explicitly approves reuse. Keep BGM audible but below narration; duck music if narration is present.
 7. Render vertical-first deliverables unless the user asks otherwise. For Facebook/Reels/TikTok default to 1080x1920, 20-35 seconds, h.264 mp4, AAC audio.
-8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review.
+8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review. Technical QC is not semantic approval: read `references/semantic-review.md`, check every segment against captions and actual narration, and record unresolved checks before upload.
 
 ## Tool Selection
 
@@ -87,6 +87,7 @@ For every batch, create a manifest or script-level list that records each ad's h
 - Read `references/multilingual-copy.md` when generating localized hooks, captions, narration, or CTAs.
 - Run `scripts/asset_usage_ledger.py` to check or append source time ranges used by a batch.
 - Run `scripts/qc_video_batch.py` after rendering a batch to verify deliverables and extract sample frames.
+- Read `references/semantic-review.md` before approving or uploading a finished ad. Record evidence-based visual/copy checks separately from audio listening and technical checks; a script cannot certify unobserved semantics.
 
 ## Delivery
 
