@@ -1,6 +1,6 @@
 ---
 name: fangskill
-description: Create batch industrial B2B social ad videos from local factory/product footage with multilingual copy, voiceover, captions, BGM, dynamic hooks, non-repeating edits, and final QC. Use when the user asks to make Facebook/Meta/TikTok/Reels vertical ads, export manufacturer promo videos, product sales videos, energy-saving motor ads, or batches of localized industrial marketing videos from localÁ¥†Êùê/materials.
+description: Create batch industrial B2B social ad videos from local factory/product footage with multilingual copy, voiceover, captions, BGM, dynamic hooks, non-repeating edits, and final QC. Use when the user asks to make Facebook/Meta/TikTok/Reels vertical ads, export manufacturer promo videos, product sales videos, energy-saving motor ads, or batches of localized industrial marketing videos from localÀÿ≤ƒ/materials.
 ---
 
 # FangSkill
@@ -14,13 +14,13 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 ## Workflow
 
 1. Clarify the campaign only when needed: product, buyer, target language/market, quantity, length, aspect ratio, and primary selling point. If the user is continuing an existing campaign, infer these from the current folder/script history.
-2. Inspect localÁ¥†Êùê before editing. Prefer real product, factory, assembly, testing, packaging, delivery, and aerial clips. Exclude source videos with burned-in subtitles or irrelevant consumer-style footage.
+2. Inspect localÀÿ≤ƒ before editing. Prefer real product, factory, assembly, testing, packaging, delivery, and aerial clips. Exclude source videos with burned-in subtitles or irrelevant consumer-style footage.
 3. Build each ad around this structure: 0-3s hook, product proof, buyer pain point, benefit, trust signal, inquiry CTA.
 4. Localize the script. The language is a parameter, not a fixed rule. Use the target market's language for hook, captions, voiceover, and CTA.
-5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates. Before selecting source segments, check the asset usage ledger and avoid reusing the same source time ranges.
+5. Compose the edit with varied footage order, different crops, changed hook copy, different CTA phrasing, and distinct pacing so batch outputs are not simple duplicates. Before selecting source segments, check the asset usage ledger and avoid reusing the same source time ranges. For every ad, validate the rendered frame at 0 seconds: it must show recognisable finished equipment when the hook names the product. A partial hopper, mould, motor, crate, or generic workshop cannot pass as a product hook.
 6. Add voiceover and real downloaded BGM. Use existing online/free music tracks by default; do not synthesize fake music unless the user explicitly asks for synthetic audio. For batches, use a different commercial/corporate-style music track for each video unless the user explicitly approves reuse. Keep BGM audible but below narration; duck music if narration is present.
-7. Render vertical-first deliverables unless the user asks otherwise. For Facebook/Reels/TikTok default to 1080x1920, 20-35 seconds, h.264 mp4, AAC audio.
-8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review. Technical QC is not semantic approval: read `references/semantic-review.md`, check every segment against captions and actual narration, and record unresolved checks before upload.
+7. Render vertical-first deliverables unless the user asks otherwise. For Facebook/Reels/TikTok default to 1080x1920, 20-35 seconds, h.264 mp4, AAC audio. Keep key product, hook, and CTA text inside the platform-safe content area: on a 1080x1920 layout, avoid the top 168 px and keep key text above 1330 px unless the requested placement has been visually verified.
+8. Run QC before delivery: count files, dimensions, duration, audio stream, subtitle fit, opening clarity, ending CTA, and sample frame review. Technical QC is not semantic approval: read `references/semantic-review.md`, check every segment against captions and actual narration, and record unresolved checks before upload. Keep technical validity, visual/claim review, and actual audio listening as separate evidence states.
 
 ## Tool Selection
 
@@ -28,7 +28,7 @@ Default to local/free tooling first: Python scripts, ffmpeg/ffprobe, local asset
 - Use `jianying-editor` when the user specifically wants JianYing/CutCap-style projects, templates, timeline editing, or a workflow based on an existing JianYing batch script.
 - Use `speech` or the local TTS path already configured in the project for multilingual voiceover.
 - Use `media-use` or browser/download tools for local/free BGM and SFX resolution when the project does not already include usable music. Prefer downloaded tracks from free/royalty-free libraries over generated tones.
-- Use `hyperframes` or `general-video` only for extra motion packaging: title cards, dynamic benefit cards, animated CTA, and visual hooks. Then composite those assets into the final ffmpeg/JianYing batch.
+- Use `hyperframes`, `openmotion`, or `general-video` only for extra motion packaging: title cards, dynamic benefit cards, animated CTA, and visual hooks. Use OpenMotion only when it is installed and connected and the deliverable benefits from an editable project, caption track, or revision history; keep batch footage selection and final range-ledger enforcement in FangSkill. Then composite those assets into the final ffmpeg/JianYing batch when appropriate.
 
 ## Multilingual Defaults
 
@@ -85,6 +85,7 @@ For every batch, create a manifest or script-level list that records each ad's h
 - Read `references/asset-usage-ledger.md` before selecting source clips for a batch or when the user complains that footage repeats.
 - Read `references/music-sourcing.md` before adding BGM or SFX to a deliverable.
 - Read `references/multilingual-copy.md` when generating localized hooks, captions, narration, or CTAs.
+- Read `references/editable-ad-packaging.md` when using an editable timeline, adding subtitle tracks, revising a delivered ad, or preparing a hero/sample ad with OpenMotion/HyperFrames.
 - Run `scripts/asset_usage_ledger.py` to check or append source time ranges used by a batch.
 - Run `scripts/qc_video_batch.py` after rendering a batch to verify deliverables and extract sample frames.
 - Read `references/semantic-review.md` before approving or uploading a finished ad. Record evidence-based visual/copy checks separately from audio listening and technical checks; a script cannot certify unobserved semantics.
