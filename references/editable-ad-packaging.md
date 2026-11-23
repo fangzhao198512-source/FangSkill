@@ -9,6 +9,19 @@ Use this reference only when a campaign needs a timeline that can be revised aft
 - When narration exists, make captions an editable track with real sentence timing. Derive timing from the TTS provider, sentence-level audio files, silence analysis, or an existing subtitle file; do not invent word-level timing from a long voice track.
 - Use restrained motion for industrial B2B copy. Fixed text with a short fade is usually preferable to repeated bouncing, wobbling, or word-by-word motion unless the user explicitly requests that treatment.
 
+## Default English typography for industrial ads
+
+Use a verified local face rather than assuming a web font is installed. On the current Windows editing environment, use this hierarchy unless the user provides brand fonts:
+
+| Text role | Preferred face | Fallback | Use |
+| --- | --- | --- | --- |
+| Hook / product title | Bahnschrift SemiBold Condensed | Arial Black | Short all-caps product claim; compact industrial appearance |
+| Benefit / CTA title | Franklin Gothic Medium | Segoe UI Semibold | Two-line buyer benefit or project prompt |
+| Phone / WhatsApp / support copy | Segoe UI Semibold | Arial | Clear contact text and smaller explanatory lines |
+| Chinese bilingual label, when needed | Noto Sans SC Black | Segoe UI | Preserve Chinese legibility; do not fake a Latin condensed look |
+
+Keep the typography role stable within one ad. Main English title is normally white; use the brand yellow only for a short eyebrow or contact accent with a dark backing panel. Do not use Impact by default: reserve it for a deliberately bold, short hook after checking it against the machine footage.
+
 ## Opening and vertical layout gate
 
 Before exporting, inspect frame 0 and the first second at the intended 9:16 crop.
